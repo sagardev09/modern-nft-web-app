@@ -22,11 +22,11 @@ const Navbar = () => {
                 <Link href={"/market"}>
                     <h5 className={pathname === "/market" ? 'bg-purple-600 px-6 py-3 rounded-2xl flex justify-center gap-4 transition-all' : " px-6 py-3 rounded-2xl flex justify-center gap-4"}>Marketplace</h5>
                 </Link>
-                <Link href={"/wallet"}>
-                    <h5 className={pathname === "/wallet" ? 'bg-purple-600 px-6 py-3 rounded-2xl flex justify-center gap-4 transition-all' : " px-6 py-3 rounded-2xl flex justify-center gap-4"}>Rankings</h5>
-                </Link>
                 <Link href={"/ranking"}>
-                    <h5 className={pathname === "/ranking" ? 'bg-purple-600 px-6 py-3 rounded-2xl flex justify-center gap-4 transition-all' : " px-6 py-3 rounded-2xl flex justify-center gap-4"}>Connect a wallet</h5>
+                    <h5 className={pathname === "/ranking" ? 'bg-purple-600 px-6 py-3 rounded-2xl flex justify-center gap-4 transition-all' : " px-6 py-3 rounded-2xl flex justify-center gap-4"}>Rankings</h5>
+                </Link>
+                <Link href={"/wallet"}>
+                    <h5 className={pathname === "/wallet" ? 'bg-purple-600 px-6 py-3 rounded-2xl flex justify-center gap-4 transition-all' : " px-6 py-3 rounded-2xl flex justify-center gap-4"}>Connect a wallet</h5>
                 </Link>
                 <Link href={"/login"}>
                     <div className={pathname === "/login" ? 'bg-purple-600 px-6 py-3 rounded-2xl flex justify-center gap-4 transition-all' : " px-6 py-3 rounded-2xl flex justify-center gap-4"}>
