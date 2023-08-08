@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <UserAuthProvider>
         <body className={inter.className}>
-          <div className='flex flex-col justify-between h-[100%]'>
+          <div className='min-h-screen flex flex-col justify-between '>
             <Navbar />
             {children}
             <Footer />

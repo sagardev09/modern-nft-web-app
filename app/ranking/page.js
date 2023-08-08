@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TodayRanking from '../components/TodayRanking'
 import WeekRanking from '../components/WeekRanking'
 import MonthRanking from '../components/MonthRanking'
@@ -10,6 +10,9 @@ const Ranking = () => {
     const [week, setweek] = useState(false)
     const [month, setmonth] = useState(false)
     const [alltime, setalltime] = useState(false)
+
+
+
 
     const handletoday = () => {
         settoday(true)
@@ -38,8 +41,8 @@ const Ranking = () => {
 
 
     return (
-        <>
-            <section className='px-48 py-20 h-full w-[100%] flex flex-col gap-8'>
+        <section className='h-full'>
+            <section className='px-48 py-20 h-[100%] w-[100%] flex flex-col gap-8'>
                 <div className='flex flex-col gap-8'>
                     <h1 className='text-white font-semibold text-6xl'>Top Creators</h1>
                     <h5 className='text-white font-normal text-xl'>Check out top ranking NFT artists on the NFT Marketplace.</h5>
@@ -98,7 +101,7 @@ const Ranking = () => {
 
                 </div>
             </section>
-        </>
+        </section>
     )
 }
 

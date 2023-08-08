@@ -12,11 +12,20 @@ const NftMarketCard = () => {
     const [data, setdata] = useState(MarketNftData)
 
     useEffect(() => {
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        } else {
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+        }
+
         const skeleton = async () => {
             await new Promise((resolve) => setTimeout(resolve, 600))
             setisskeleton(false)
         }
         skeleton()
+
     }, [])
 
 

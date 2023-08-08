@@ -30,7 +30,7 @@ const Navbar = () => {
                 </Link>
                 <Link href={"/login"}>
                     <div className={pathname === "/login" ? 'bg-purple-600 px-6 py-3 rounded-2xl flex justify-center gap-4 transition-all' : " px-6 py-3 rounded-2xl flex justify-center gap-4"}>
-                        <Image src={"user.svg"} alt='user' width={20} height={20} />
+                        <Image src={"/user.svg"} alt='user' width={20} height={20} />
                         <h5>Sign Up</h5>
                     </div>
                 </Link>
