@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import dp from "@/public/pp.png"
 import artist from "@/public/artist.png"
 import copy from "@/public/copy.svg"
@@ -9,11 +9,15 @@ import edit from "@/public/edit.svg"
 import MarketNft from '../components/MarketNft'
 import MarketCollection from '../components/MarketCollection'
 import Link from 'next/link'
+import CreateNft from '../components/CreateNft'
+
 
 const Profile = () => {
     const [created, setcreated] = useState(true)
     const [own, setown] = useState(false)
     const [collection, setcollection] = useState(false)
+
+
 
 
     const handlecreated = () => {
@@ -94,16 +98,17 @@ const Profile = () => {
             <div className='w-full h-[1px] bg-slate-600 mt-6 bg-opacity-40'></div>
             <section className='px-48 h-full w-[100%]'>
                 <div className='w-full  h-[60px] flex justify-between'>
-                    <div className={created ? 'flex-1 border-b-2 border-b-[#858584] flex justify-center items-center  cursor-pointer transition-all' : 'flex-1   flex justify-center items-center  cursor-pointer'} onClick={handlecreated}>
-                        <span className={created ? "font-semibold text-white text-xl transition-all" : "font-semibold text-gray-500 text-xl"}>Created</span>
-
+                    <div className={created ? 'flex-1 border-b-2 border-b-[#858584] flex justify-center items-center gap-4  cursor-pointer transition-all' : 'flex-1 gap-4  flex justify-center items-center  cursor-pointer'} onClick={handlecreated}>
+                        <span className={created ? "font-semibold text-white text-xl transition-all" : "font-semibold text-gray-500 gap-4 text-xl"}>Created</span>
+                        <span className={created ? "px-3 py-1 bg-[#FFFFFF] bg-opacity-30 rounded-3xl text-white w-fit" : 'px-3 py-1 bg-black bg-opacity-20 rounded-3xl text-white w-fit'}>302</span>
                     </div>
-                    <div className={own ? 'flex-1 border-b-2 border-b-[#858584] flex justify-center items-center  cursor-pointer transition-all' : 'flex-1  flex justify-center items-center  cursor-pointer'} onClick={handleown}>
+                    <div className={own ? 'flex-1 border-b-2 border-b-[#858584] flex justify-center items-center gap-4  cursor-pointer transition-all' : 'flex-1 gap-4 flex justify-center items-center  cursor-pointer'} onClick={handleown}>
                         <span className={own ? "font-semibold text-white text-xl transition-all" : "font-semibold text-gray-500 text-xl"}>Own</span>
-
+                        <span className={own ? "px-3 py-1 bg-[#FFFFFF] bg-opacity-30 rounded-3xl text-white w-fit" : 'px-3 py-1 bg-black bg-opacity-20 rounded-3xl text-white w-fit'}>32</span>
                     </div>
-                    <div className={collection ? 'flex-1 border-b-2 border-b-[#858584] flex justify-center items-center  cursor-pointer transition-all' : 'flex-1  flex justify-center items-center  cursor-pointer'} onClick={handlecollection}>
-                        <span className={collection ? "font-semibold text-white text-xl transition-all" : "font-semibold text-gray-500 text-xl"}>Collection</span>
+                    <div className={collection ? 'flex-1 border-b-2 border-b-[#858584] flex justify-center items-center gap-4  cursor-pointer transition-all' : 'flex-1  flex justify-center items-center gap-4  cursor-pointer'} onClick={handlecollection}>
+                        <span className={collection ? "font-semibold text-white text-xl transition-all" : "font-semibold text-gray-500  text-xl"}>Collection</span>
+                        <span className={collection ? "px-3 py-1 bg-[#FFFFFF] bg-opacity-30 rounded-3xl text-white w-fit" : 'px-3 py-1 bg-black bg-opacity-20 rounded-3xl text-white w-fit'}>4</span>
                     </div>
                 </div>
                 <div>
@@ -117,6 +122,7 @@ const Profile = () => {
                         collection ? <MarketNft /> : ""
                     }
                 </div>
+                <CreateNft />
             </section>
             <div className='w-full h-[1px] bg-slate-900 mt-8 '></div>
         </section>

@@ -1,14 +1,25 @@
 "use client"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import search from "@/public/search.svg"
 import Image from 'next/image'
 import MarketNft from '../components/MarketNft'
 import MarketCollection from '../components/MarketCollection'
+import { UserAuth } from '@/context/Context'
+import { useRouter } from 'next/navigation'
 
 const MarketPlace = () => {
 
     const [isnft, setisnft] = useState(true)
     const [iscollection, setiscollection] = useState(false)
+
+    const router = useRouter()
+    const { user } = UserAuth()
+
+    useEffect(() => {
+        if (!user) {
+            router.push("/login")
+        }
+    }, [user, router])
 
     const handlenft = () => {
         setisnft(true)

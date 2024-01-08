@@ -40,6 +40,7 @@ body {
   overflow-x: hidden;
   border: 1px solid rgba(128, 128, 128, 0.53);
 }
+
 .faq__question {
   background-color: #3b3b3b;
   color: white;
@@ -74,32 +75,7 @@ body {
   border-radius: 5px;
   border: 1px solid white;
 }
-
-/* .faq__question_active:before {
-  content: "";
-  background-image: url("../public/arr1.svg");
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: 50%, 100%;
-  position: absolute;
-  right: 20px;
-  bottom: 15px;
-  border-radius: 5px;
-  height: 35px;
-  width: 35px;
-  border: 1px solid white;
-  transition: all 2s ease-in-out;
-} */
-/* .faq__panel {
-  height: 0px;
-  text-align: left;
-  font-size: 14px;
-  line-height: 1.5;
-  overflow: hidden;
-  border: 1px solid black;
+.btnshadow {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
-.faq__panel_active {
-  height: 300px;
-  transition: all 2s ease-in-out;
-} */

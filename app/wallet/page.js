@@ -1,12 +1,14 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import img1 from "@/public/metamask.png"
 import img2 from "@/public/WalletConnect.png"
 import img3 from "@/public/Coinbase.png"
 import img4 from "@/public/pngwing.com.png"
 
+
 const LoginPage = () => {
+
     return (
         <div className='mt-4 h-full w-full'>
             <div className='flex gap-8'>

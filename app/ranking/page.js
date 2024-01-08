@@ -5,6 +5,7 @@ import WeekRanking from '../components/WeekRanking'
 import MonthRanking from '../components/MonthRanking'
 import AllTime from '../components/AllTime'
 
+
 const Ranking = () => {
     const [today, settoday] = useState(true)
     const [week, setweek] = useState(false)
