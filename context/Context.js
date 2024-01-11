@@ -33,20 +33,26 @@ export const UserAuthProvider = ({ children }) => {
         }
     }
 
-    const signin = async ({ email, password }) => {
+    const signin = async ({ email, password, isSignUp }) => {
         try {
-            await createUserWithEmailAndPassword(auth, email, password)
-                .then((userCred) => {
-                    if (userCred) {
-                        console.log(userCred, "account created")
-                        setDoc(doc(db, "users", userCred?.user?.uid), { userCred?.user })
-                    }
-                })
+            const userCred = await createUserWithEmailAndPassword(auth, email, password);
+            if (userCred) {
+                await setDoc(doc(db, "users", userCred.user.uid), {
+                    email: userCred.user.email,
+                    displayName: userCred.user.displayName,
+                    phoneNumber: userCred.user.phoneNumber,
+                    photoURL: userCred.user.photoURL,
+                    providerId: userCred.user.providerId,
+                    uid: userCred.user.uid
+                });
+
+                console.log("User data stored in Firestore");
+                setuser(null)
+            }
+        } catch (error) {
+            console.error(error);
         }
-        catch (error) {
-            console.log(error);
-        }
-    }
+    };
 
     const logout = async () => {
         try {
@@ -58,15 +64,11 @@ export const UserAuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-
         const unsubscribe = onAuthStateChanged(auth, (userCred) => {
             if (userCred) {
-                // User is signed in
                 setuser(userCred);
                 setisloading(false);
-
             } else {
-                // User is signed out
                 setuser(null);
                 setisloading(false);
                 router.push('/login');
@@ -74,8 +76,8 @@ export const UserAuthProvider = ({ children }) => {
         });
 
         return () => unsubscribe();
-
     }, [router]);
+
 
     // if (isloading) {
     //     <div>loading......</div>
